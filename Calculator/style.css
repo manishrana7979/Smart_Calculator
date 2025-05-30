@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.top-bar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#theme-toggle {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 20px;
+  background: #ffffffcc;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #ffffffee;
+}
+
+.calculator {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 360px;
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  font-size: 1.8rem;
+  text-align: right;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #f1f1f1;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.equal {
+  grid-column: span 2;
+  background: #4caf50;
+  color: white;
+}
+
+.equal:hover {
+  background: #43a047;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #232526, #414345);
+}
+
+body.dark .calculator {
+  background: #2c2c2c;
+  color: white;
+}
+
+body.dark #display {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+body.dark button {
+  background: #444;
+  color: white;
+}
+
+body.dark button:hover {
+  background: #555;
+}
+
+body.dark .equal {
+  background: #00c853;
+}
+
+body.dark .equal:hover {
+  background: #00b248;
+}
+
+button.active-key {
+  background-color: #ccc !important;
+  transform: scale(0.98);
+}
+
+body.dark button.active-key {
+  background-color: #666 !important;
+}
+
+@media screen and (max-width: 480px) {
+  #display {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
